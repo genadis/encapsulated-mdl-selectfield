@@ -1,5 +1,32 @@
-(function() {
+(function(root, vendor, factory) {
+    /**
+     * Encapsulation patch
+     */
+    var dep = $$mdlDepName$$;
+    if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module.
+        define([dep], factory);
+    } else if (typeof module === 'object' && module.exports) {
+        // Node. Does not work with strict CommonJS, but
+        // only CommonJS-like environments that support module.exports,
+        // like Node.
+        module.exports = factory(require(dep));
+    } else {
+        // Browser globals (root is window)
+        var result = factory(root);
+        root[vendor] = root[vendor] || {};
+        root[vendor].mdl = root[vendor].mdl || {};
+        root[vendor].mdl['MaterialSelectfield'] = result['MaterialSelectfield'];
+    }
+
+}(this, $$vendorName$$ ,function (deps) {
   'use strict';
+
+  /**
+   * Encapsulation patch
+   */
+  var componentHandler = deps.componentHandler;
+  var window = {};
 
   /**
    * Class constructor for Select field MDL component.
@@ -199,4 +226,6 @@
     cssClass: 'mdl-js-selectfield',
     widget: true
   });
-})();
+
+  return window;
+}));

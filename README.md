@@ -1,6 +1,28 @@
 # mdl-selectfield
 Material Design Lite selectfield component (https://github.com/google/material-design-lite)
 
+This is a fork of [mebibou/mdl-selectfield](https://github.com/mebibou/mdl-selectfield) patched to work with [encapsulated-mdl](https://github.com/genadis/encapsulated-mdl).
+
+## Install
+
+````
+npm install encapsulated-mdl-selectfield --save
+````
+
+## Build
+
+A new `build:encap` gulp task is introduced for building to build encapsulated production files
+
+The task accepts:
+   * -v [VENDOR_NAME] parameter, default "Google"
+   * -p [PREFIX] parameter, default is mdl
+   * -d [DEPENDENCY] parameter, to be injected into the module, default is "encapsulated-mdl".
+   * MDL is encapsulated inside window[vendor].mdl or exposed as cjs/amd module
+   * If cjs/amd is not available, the global window[VENDOR_NAME].mdl.componentHandler is expected.
+
+#### Below is the original README. Usage remains the same. 
+
+
 [![Bower Version](https://img.shields.io/bower/v/mdl-selectfield.svg)](https://github.com/mebibou/mdl-selectfield)
 [![NPM Version](https://img.shields.io/npm/v/mdl-selectfield.svg)](https://www.npmjs.com/package/mdl-selectfield)
 [![license](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](https://github.com/mebibou/mdl-selectfield/blob/master/LICENSE)
