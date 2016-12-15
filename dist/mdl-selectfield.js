@@ -2,15 +2,14 @@
     /**
      * Encapsulation patch
      */
-    var dep = 'encapsulated-mdl';
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
-        define([dep], factory);
+        define(['encapsulated-mdl'], factory);
     } else if (typeof module === 'object' && module.exports) {
         // Node. Does not work with strict CommonJS, but
         // only CommonJS-like environments that support module.exports,
         // like Node.
-        module.exports = factory(require(dep));
+        module.exports = factory(require('encapsulated-mdl'));
     } else {
         // Browser globals (root is window)
         var result = factory(root);

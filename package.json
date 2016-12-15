@@ -40,7 +40,7 @@
     "registry": "npm",
     "jspmPackage": true,
     "main": "mdl-selectfield.min.js",
-    "format": "amd",
+    "format": "cjs",
     "directories": {
       "dist": "dist"
     },
